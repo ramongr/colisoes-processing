@@ -11,6 +11,7 @@ boolean keyleftp2 = false;
 boolean keyrightp2 = false;
 
 User myuser, otheruser;
+Monster monster, monster2;
 
 void setup(){
   x = 640;
@@ -19,8 +20,10 @@ void setup(){
   
   mass = 32;
   
-  myuser = new User(x/2,y/2,mass);
-  otheruser = new User(x/2,(y/2)-75,mass);
+  myuser = new User(x/2, y/2, mass);
+  otheruser = new User(x/2, (y/2)-75, mass);
+  monster = new Monster((x/2)-75, y/2, mass/2);
+  monster2 = new Monster((x/2)-90, (y/2)+10, mass/2);
 }
 
 void draw(){
@@ -32,6 +35,8 @@ void draw(){
   
   otheruser.display();
   myuser.display();
+  monster.display();
+  monster2.display();
 }
 
 void keyPressed() {

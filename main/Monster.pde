@@ -10,11 +10,14 @@ class Monster{
   }
 
   void display(){
-
-    textAlign(CENTER, CENTER);
-    textSize(14);
-    text("?", x/2, y/2);
+    
+    fill(255,255,255);
     ellipse(x, y, mass, mass);
+    
+    fill(0,0,0);
+    textAlign(CENTER);
+    textSize(14);
+    text("?", x, y+(mass/4)+2);
   }
 
   void collision(float x, float y, float mass, float ang) {
@@ -22,10 +25,6 @@ class Monster{
     //As massas passam a ser raios
     mass = mass/2;
     float radius = this.mass/2;
-
-    //"Normalização" do ângulo para simplificar contas
-    float myang = (ang*-1)+this.ang;
-    ang = (ang*-1)+ang;
     
     println(y+" , "+(y-mass));
     println(this.y+" , "+(this.y+radius));
