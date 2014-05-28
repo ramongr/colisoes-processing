@@ -11,7 +11,7 @@ class Monster{
 
   void display(){
     
-    fill(255,255,255);
+    fill(199, 184, 18);
     ellipse(x, y, mass, mass);
     
     fill(0,0,0);
