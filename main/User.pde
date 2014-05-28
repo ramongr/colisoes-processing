@@ -18,7 +18,7 @@ class User {
     pushMatrix();
     //Make this point the origin of rotation
     translate(x, y);
-    //Rotate in radians
+    //Rotate in radians  
     rotate(radians(ang));
 
     /*Since in this matrix (x,y) is the origin, the ellipse must be drawn here!*/
