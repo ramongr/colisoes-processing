@@ -77,6 +77,7 @@ class User {
     //As massas passam a ser raios
     mass = mass/2;
     float radius = this.mass/2;
+    double d = Math.sqrt(Math.pow((this.x-x),2)+Math.pow((this.y-y),2));
 
     //"Normalização" do ângulo para simplificar contas
     float myang = (ang*-1)+this.ang;
@@ -97,6 +98,8 @@ class User {
         println("No");
       }
     }
+
+    if( d<= ((this.mass/2)+mass/2)) this.ang = (this.ang-180)%360;
   }
 }
 

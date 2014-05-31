@@ -32,6 +32,7 @@ void draw(){
   otheruser.move(keyupp2,keydownp2,keyleftp2,keyrightp2,x,y);
   
   myuser.collision(otheruser.x,otheruser.y,otheruser.mass, otheruser.ang);
+  otheruser.collision(myuser.x,myuser.y,myuser.mass, myuser.ang);
   
   otheruser.display();
   myuser.display();

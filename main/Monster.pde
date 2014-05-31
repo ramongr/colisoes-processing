@@ -22,9 +22,7 @@ class Monster{
 
   void collision(float x, float y, float mass) {
 
-    float x = Math.pow((this.x-x),2);
-    float y = Math.pow((this.y-y),2);
-    float d = Math.sqrt(x+y);
+    double d = Math.sqrt(Math.pow((this.x-x),2)+Math.pow((this.y-y),2));
 
     if( d<= ((this.mass/2)+mass/2)) println("Yes");
   }
