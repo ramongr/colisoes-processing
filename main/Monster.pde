@@ -20,26 +20,12 @@ class Monster{
     text("?", x, y+(mass/4)+2);
   }
 
-  void collision(float x, float y, float mass, float ang) {
+  void collision(float x, float y, float mass) {
 
-    //As massas passam a ser raios
-    mass = mass/2;
-    float radius = this.mass/2;
-    
-    println(y+" , "+(y-mass));
-    println(this.y+" , "+(this.y+radius));
-    
-    if ( (x-mass) < (this.x+radius) && (x+mass) > (this.x-radius)) {
+    float x = Math.pow((this.x-x),2);
+    float y = Math.pow((this.y-y),2);
+    float d = Math.sqrt(x+y);
 
-      if ( (y+mass) > (this.y - radius) && y < (this.y-radius)) {
-        //Put here bonus values
-        println("Yes");
-      }
-
-      if ( y >= (this.y-radius) && (y-mass) <= (this.y+radius)) {
-        //Put here bonus values
-        println("Yes");
-      }
-    }
+    if( d<= ((this.mass/2)+mass/2)) println("Yes");
   }
 }
