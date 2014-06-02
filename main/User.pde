@@ -30,7 +30,6 @@ class User {
   
   void move(boolean keyup, boolean keydown, boolean keyleft, boolean keyright, float x, float y) {
     
-    println(x+" , "+y);
     if((this.x-mass) > 0 && (this.x+mass) < x && (this.y-mass) > 0 && (this.y+mass) < y){
       
       if (keyup) {
@@ -51,23 +50,30 @@ class User {
       if (keyleft) ang = (ang-spd)%360;
       if (keyright) ang = (ang+spd)%360;
       
-      println(spd);
     }else{
       
       if(!((this.x-mass) > 0)){
         
         this.x +=5;
+        this.ang = 270-this.ang;
+        println("1");
       }else{
         
         this.x -=5;
+        this.ang = 270-this.ang;
+        println("2");
       }
       
       if(!((this.y-mass) > 0)){
         
         this.y +=5;
+        this.ang = 180-this.ang;
+        println("3");
       }else{
         
         this.y -=5;
+        this.ang = 180-this.ang;
+        println("4");
       }
     }
   }
@@ -82,9 +88,6 @@ class User {
     //"Normalização" do ângulo para simplificar contas
     float myang = (ang*-1)+this.ang;
     ang = (ang*-1)+ang;
-    
-    println(y+" , "+(y-mass));
-    println(this.y+" , "+(this.y+radius));
     
     if ( (x-mass) < (this.x+radius) && (x+mass) > (this.x-radius)) {
 
