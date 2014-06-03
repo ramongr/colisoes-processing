@@ -29,6 +29,9 @@ class User {
   }
   
   void move(boolean keyup, boolean keydown, boolean keyleft, boolean keyright, float x, float y) {
+
+    float dx = this.x;
+    float dy = this.y;
     
     if((this.x-mass) > 0 && (this.x+mass) < x && (this.y-mass) > 0 && (this.y+mass) < y){
       
@@ -55,26 +58,21 @@ class User {
       if(!((this.x-mass) > 0)){
         
         this.x +=5;
-        this.ang = 270-this.ang;
-        println("1");
       }else{
         
         this.x -=5;
-        this.ang = 270-this.ang;
-        println("2");
       }
       
       if(!((this.y-mass) > 0)){
         
         this.y +=5;
-        this.ang = 180-this.ang;
-        println("3");
       }else{
         
         this.y -=5;
-        this.ang = 180-this.ang;
-        println("4");
       }
+        double beta = Math.atan2((this.y-dy),(this.x-dx));
+
+        this.ang = (float) (beta*180/Math.PI)+60;
     }
   }
 
